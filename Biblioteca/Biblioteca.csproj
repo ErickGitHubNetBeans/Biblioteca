@@ -8,12 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="frmUsuario" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="frmUsuario" />
-  </ItemGroup>
-
 </Project>
