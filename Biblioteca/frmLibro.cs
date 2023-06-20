@@ -20,7 +20,7 @@ namespace Biblioteca
 
         private void btnLeer_Click(object sender, EventArgs e)
         {
-            string ruta = "D:\\libros.txt"; //ruta para importar la base de datos
+            string ruta = @"C:\Users\hristochavez\Documents\libros.txt"; //ruta para importar la base de datos
             string[] libros = File.ReadAllLines(ruta); //lee todas la líneas
             if (txtLibros.Text.Length == 0) //si está vacío, llena el textbox
             {
@@ -38,7 +38,7 @@ namespace Biblioteca
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string ruta = "D:\\Libros.txt"; //ruta para exportar a la base de datos
+            string ruta = @"C:\Users\hristochavez\Documents\libros.txt"; //ruta para exportar a la base de datos
             using (StreamWriter writer = new StreamWriter(ruta)) //permite escribir
                                                                  //en el archivo
             {
