@@ -8,46 +8,47 @@ namespace Biblioteca
 {
     internal class ABB 
     {
-        //Atributos:
-        private Nodo raiz;
-        private Nodo hijoIzquierdo;
-        private Nodo hijoDerecho;
+        //Atributos
+        private Libro l;
+        private ABB izq, der;
 
-        //Constructor:
-        public ABB()
+        public bool isEmpty()
         {
-
-        }
-        //Métodos de acceso:
-        public void setRaiz(Nodo raiz)
-        {
-            this.raiz = raiz;
-        }
-        public Nodo getRaiz()
-        {
-            return this.raiz;
-        }
-        public void setHijoIzquierdo(Nodo izquierdo)
-        {
-            this.hijoIzquierdo = izquierdo;
-        }
-        public Nodo getHijoIzquierdo()
-        {
-            return this.hijoIzquierdo;
-        }
-        public void setHijoDerecho(Nodo derecho)
-        {
-            this.hijoDerecho = derecho;
-        }
-        public Nodo getHijoDerecho()
-        {
-            return this.hijoDerecho;
+            return this.l is null;
         }
 
-        //toString
-        public override string? ToString()
+        public bool treeWithoutSheets()
         {
-            return base.ToString();
+            return this.l is not null && this.izq is null && this.der is null;
+        }
+
+        public void add(Libro lib)
+        {
+            if (this.isEmpty())
+            {
+                // Por comentar.
+                this.l = lib;
+            }
+            else
+            {
+                if (this.l.compare(lib) > 0)
+                {
+                    // Por comentar.
+                    if (this.der is null) { this.der = new ABB(); }
+                    this.der.add(lib);
+                }
+                else if (this.l.compare(lib) < 0)
+                {
+                    // Por comentar.
+                    if (this.izq is null) { this.izq = new ABB(); }
+                    this.izq.add(lib);
+                }
+                else
+                {
+                    //Por comentar.
+                    Console.WriteLine("Existe un libro con el mismo id.");
+                }
+            }
         }
     }
 }
