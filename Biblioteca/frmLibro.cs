@@ -26,7 +26,7 @@ namespace Biblioteca
             {
                 foreach (string linea in libros)  //recorrido de libros
                 {
-                    txtLibros.Text += linea + "\r" + "\n"; 
+                    txtLibros.Text += linea + "\r" + "\n";
                     //se añade línea por línea
                 }
             }
@@ -46,6 +46,13 @@ namespace Biblioteca
                 writer.WriteLine(txtLibros.Text); //escribe lo del multilínea
                 writer.Close(); //cierra el archivo
             }
+        }
+
+        private void btnRegBook_Click(object sender, EventArgs e)
+        {
+            FrmCrearLibro frmCrearLibro = new FrmCrearLibro();
+            frmCrearLibro.Show();
+            this.Close();
         }
     }
 }
