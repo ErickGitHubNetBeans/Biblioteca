@@ -1,6 +1,6 @@
 ﻿namespace Biblioteca
 {
-    partial class frmLibro
+    partial class FrmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.

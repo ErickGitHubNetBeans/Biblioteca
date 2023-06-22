@@ -11,9 +11,9 @@ using System.IO;
 
 namespace Biblioteca
 {
-    public partial class frmLibro : Form
+    public partial class FrmMenuPrincipal : Form
     {
-        public frmLibro()
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
         }
