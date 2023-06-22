@@ -28,74 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLeer = new Button();
-            btnGuardar = new Button();
-            txtLibros = new TextBox();
             btnRegBook = new Button();
+            btnSearch = new Button();
             SuspendLayout();
-            // 
-            // btnLeer
-            // 
-            btnLeer.Location = new Point(178, 322);
-            btnLeer.Margin = new Padding(3, 2, 3, 2);
-            btnLeer.Name = "btnLeer";
-            btnLeer.Size = new Size(82, 22);
-            btnLeer.TabIndex = 1;
-            btnLeer.Text = "Leer";
-            btnLeer.UseVisualStyleBackColor = true;
-            btnLeer.Click += btnLeer_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(305, 322);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(82, 22);
-            btnGuardar.TabIndex = 2;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // txtLibros
-            // 
-            txtLibros.Location = new Point(178, 40);
-            txtLibros.Margin = new Padding(3, 2, 3, 2);
-            txtLibros.Multiline = true;
-            txtLibros.Name = "txtLibros";
-            txtLibros.Size = new Size(338, 262);
-            txtLibros.TabIndex = 3;
             // 
             // btnRegBook
             // 
-            btnRegBook.Location = new Point(432, 322);
+            btnRegBook.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegBook.Location = new Point(33, 40);
             btnRegBook.Name = "btnRegBook";
-            btnRegBook.Size = new Size(94, 39);
+            btnRegBook.Size = new Size(149, 46);
             btnRegBook.TabIndex = 4;
             btnRegBook.Text = "Registrar un libro";
             btnRegBook.UseVisualStyleBackColor = true;
             btnRegBook.Click += btnRegBook_Click;
             // 
-            // frmLibro
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.Location = new Point(215, 40);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(149, 46);
+            btnSearch.TabIndex = 5;
+            btnSearch.Text = "Buscar un libro";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(736, 386);
+            ClientSize = new Size(400, 122);
+            Controls.Add(btnSearch);
             Controls.Add(btnRegBook);
-            Controls.Add(txtLibros);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnLeer);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "frmLibro";
-            Text = "frmLibro";
+            MaximizeBox = false;
+            Name = "FrmMenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Menú principal";
+            FormClosing += FrmMenuPrincipal_FormClosing;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnLeer;
-        private Button btnGuardar;
-        private TextBox txtLibros;
         private Button btnRegBook;
+        private Button btnSearch;
     }
 }
