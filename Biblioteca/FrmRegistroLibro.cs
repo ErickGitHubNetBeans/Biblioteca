@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Biblioteca
 {
-    public partial class FrmCrearLibro : Form
+    public partial class FrmRegistroLibro : Form
     {
-        public FrmCrearLibro()
+        public FrmRegistroLibro()
         {
             InitializeComponent();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
-        {   
+        {
             if (!this.validateTxtBox())
             {
                 MessageBoxButtons btnOk = MessageBoxButtons.OK;
