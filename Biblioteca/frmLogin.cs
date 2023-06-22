@@ -11,18 +11,23 @@ namespace Biblioteca
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             //usuario Admin, contrasenia 12345
-            if(txtUsuario.Text.Equals("Admin") && 
+            if (txtUsuario.Text.Equals("admin") &&
                 txtContrasenia.Text.Equals("12345"))
             {
-                frmLibro frmLibro=new frmLibro();
-                frmLibro.Show();
-                this.Close();
+                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+                this.Hide();
+                menuPrincipal.Show();
             }
             else
             {
                 txtUsuario.Text = "";
                 txtContrasenia.Text = "";
             }
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

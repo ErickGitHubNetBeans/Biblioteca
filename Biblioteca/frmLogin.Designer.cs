@@ -28,98 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            txtUsuario = new TextBox();
+            txtContrasenia = new TextBox();
+            btnIngresar = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(184, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MINISTERIO DE EDUCACIÓN";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(113, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(225, 21);
+            label1.TabIndex = 0;
+            label1.Text = "MINISTERIO DE EDUCACIÓN";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(83, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(506, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "BIBLIOTECA \"JULIO RAMÓN RIBEYRO\"";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(25, 67);
+            label2.Name = "label2";
+            label2.Size = new Size(396, 30);
+            label2.TabIndex = 1;
+            label2.Text = "BIBLIOTECA \"JULIO RAMÓN RIBEYRO\"";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(183, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Usuario :";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(148, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(71, 21);
+            label3.TabIndex = 2;
+            label3.Text = "Usuario :";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(183, 281);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Contraseña :";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(123, 182);
+            label4.Name = "label4";
+            label4.Size = new Size(96, 21);
+            label4.TabIndex = 3;
+            label4.Text = "Contraseña :";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(312, 221);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(114, 27);
-            this.txtUsuario.TabIndex = 4;
+            txtUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsuario.Location = new Point(225, 125);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(100, 27);
+            txtUsuario.TabIndex = 4;
+            txtUsuario.WordWrap = false;
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(312, 278);
-            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(114, 27);
-            this.txtContrasenia.TabIndex = 5;
+            txtContrasenia.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContrasenia.Location = new Point(225, 176);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(100, 27);
+            txtContrasenia.TabIndex = 5;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(261, 348);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(86, 31);
-            this.btnIngresar.TabIndex = 6;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            btnIngresar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIngresar.Location = new Point(163, 227);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(115, 46);
+            btnIngresar.TabIndex = 6;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 480);
-            this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.txtContrasenia);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmLogin";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(440, 296);
+            Controls.Add(btnIngresar);
+            Controls.Add(txtContrasenia);
+            Controls.Add(txtUsuario);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            MaximizeBox = false;
+            Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inicio de sesión";
+            FormClosing += frmLogin_FormClosing;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
