@@ -12,9 +12,11 @@ namespace Biblioteca
 {
     public partial class FrmRegistroLibro : Form
     {
-        public FrmRegistroLibro()
+        public FrmRegistroLibro(string fullPath, ABB abb)
         {
             InitializeComponent();
+            this.fullPath = fullPath;
+            this.abb = abb;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -29,38 +31,30 @@ namespace Biblioteca
             }
             else
             {
-                ABB abb = new ABB();
-
                 // Atributos de los libros.
-                string title, author;
-                int year;
+                string titulo, autor, editorial, pais;
+                int anio;
 
-                // Identificador de libro autoincrementable.
-                id = id + 1;
+                // Campos de texto.
+                titulo = this.txtTitulo.Text;
+                autor = this.txtAutor.Text;
+                editorial = this.txtEditorial.Text;
+                pais = this.txtPais.Text;
+                anio = int.Parse(this.txtAnio.Text);
 
-                // Ruta de la carpeta.
-                string dir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-                // Nombre del archivo.
-                string filename = "libros.txt";
-
-                title = this.txtTitle.Text;
-                author = this.txtAuthor.Text;
-                year = int.Parse(this.txtYear.Text);
+                this.id = this.abb.isEmpty() ? this.id++ : 
+                    this.abb.getGreaterId() + 1;
 
                 // Instancia de la clase libro.
-                Libro l = new Libro(id, title, author, year);
+                Libro l = new Libro(id, titulo, autor, editorial, pais,
+                    anio);
 
-                // Agregar el libro al ABB.
-                abb.add(l);
+                this.abb.add(l);
 
-                // Ruta completa del archivo libro.txt.
-                string path = dir + "\\" + filename;
-
-                // Escribe una cadena por linea
-                using (StreamWriter sw = File.AppendText(path))
+                using (StreamWriter sw = File.AppendText(this.fullPath))
                 {
-                    sw.WriteLine(createLine(id, title, author, year));
+                    sw.WriteLine(this.createLine(id, titulo, autor,
+                        editorial, pais, anio));
                 }
 
                 // Mensaje de registro exitoso.
@@ -71,21 +65,27 @@ namespace Biblioteca
                 MessageBox.Show(msg, titleConfr, btnOk, icoInfo);
 
                 // Limpieza de cuadros de texto.
-                resetTxtBox();
+                this.resetTxtBox();
             }
         }
 
-        private string createLine(int id, string title, string author, int year)
+        // Crea un linea con los atributos del libro separados por ";".
+        private string createLine(int id, string titulo, string autor,
+            string editorial, string pais, int anio)
         {
-            return id + ";" + title + ";" + author + ";" + year;
+            return id + ";" + titulo + ";" + autor + ";" + editorial + ";"
+                + pais + ";" + anio;
         }
 
+        // Valida que los cuadros de texto no esten vacios.
         private bool validateTxtBox()
         {
-            TextBox[] textBoxes = new TextBox[3];
-            textBoxes[0] = this.txtTitle;
-            textBoxes[1] = this.txtAuthor;
-            textBoxes[2] = this.txtYear;
+            TextBox[] textBoxes = new TextBox[5];
+            textBoxes[0] = this.txtTitulo;
+            textBoxes[1] = this.txtAutor;
+            textBoxes[2] = this.txtEditorial;
+            textBoxes[3] = this.txtPais;
+            textBoxes[4] = this.txtAnio;
 
             foreach (TextBox tb in textBoxes)
             {
@@ -97,12 +97,16 @@ namespace Biblioteca
             return true;
         }
 
+        // Limpia los cuadros de texto despues de un registro exitoso de un
+        // libro.
         private void resetTxtBox()
         {
-            TextBox[] textBoxes = new TextBox[3];
-            textBoxes[0] = this.txtTitle;
-            textBoxes[1] = this.txtAuthor;
-            textBoxes[2] = this.txtYear;
+            TextBox[] textBoxes = new TextBox[5];
+            textBoxes[0] = this.txtTitulo;
+            textBoxes[1] = this.txtAutor;
+            textBoxes[2] = this.txtEditorial;
+            textBoxes[3] = this.txtPais;
+            textBoxes[4] = this.txtAnio;
 
             foreach (TextBox tb in textBoxes)
             {

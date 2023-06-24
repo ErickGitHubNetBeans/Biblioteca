@@ -30,16 +30,16 @@
         {
             label1 = new Label();
             btnRegister = new Button();
-            txtTitle = new TextBox();
+            txtTitulo = new TextBox();
             label2 = new Label();
-            txtAuthor = new TextBox();
+            txtAutor = new TextBox();
             label3 = new Label();
-            txtYear = new TextBox();
+            txtAnio = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtEditorial = new TextBox();
             label6 = new Label();
-            textBox2 = new TextBox();
+            txtPais = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -63,13 +63,13 @@
             btnRegister.UseVisualStyleBackColor = true;
             btnRegister.Click += btnRegister_Click;
             // 
-            // txtTitle
+            // txtTitulo
             // 
-            txtTitle.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTitle.Location = new Point(197, 88);
-            txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(161, 27);
-            txtTitle.TabIndex = 2;
+            txtTitulo.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTitulo.Location = new Point(197, 88);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(161, 27);
+            txtTitulo.TabIndex = 2;
             // 
             // label2
             // 
@@ -81,13 +81,13 @@
             label2.TabIndex = 3;
             label2.Text = "Autor:";
             // 
-            // txtAuthor
+            // txtAutor
             // 
-            txtAuthor.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAuthor.Location = new Point(197, 140);
-            txtAuthor.Name = "txtAuthor";
-            txtAuthor.Size = new Size(161, 27);
-            txtAuthor.TabIndex = 4;
+            txtAutor.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAutor.Location = new Point(197, 140);
+            txtAutor.Name = "txtAutor";
+            txtAutor.Size = new Size(161, 27);
+            txtAutor.TabIndex = 4;
             // 
             // label3
             // 
@@ -99,13 +99,13 @@
             label3.TabIndex = 5;
             label3.Text = "Año de publicación:";
             // 
-            // txtYear
+            // txtAnio
             // 
-            txtYear.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtYear.Location = new Point(197, 299);
-            txtYear.Name = "txtYear";
-            txtYear.Size = new Size(161, 27);
-            txtYear.TabIndex = 6;
+            txtAnio.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAnio.Location = new Point(197, 299);
+            txtAnio.Name = "txtAnio";
+            txtAnio.Size = new Size(161, 27);
+            txtAnio.TabIndex = 6;
             // 
             // label4
             // 
@@ -127,13 +127,13 @@
             label5.TabIndex = 9;
             label5.Text = "Editorial:";
             // 
-            // textBox1
+            // txtEditorial
             // 
-            textBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(197, 194);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(161, 27);
-            textBox1.TabIndex = 10;
+            txtEditorial.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEditorial.Location = new Point(197, 194);
+            txtEditorial.Name = "txtEditorial";
+            txtEditorial.Size = new Size(161, 27);
+            txtEditorial.TabIndex = 10;
             // 
             // label6
             // 
@@ -145,29 +145,29 @@
             label6.TabIndex = 11;
             label6.Text = "País:";
             // 
-            // textBox2
+            // txtPais
             // 
-            textBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(197, 244);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(161, 27);
-            textBox2.TabIndex = 12;
+            txtPais.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPais.Location = new Point(197, 244);
+            txtPais.Name = "txtPais";
+            txtPais.Size = new Size(161, 27);
+            txtPais.TabIndex = 12;
             // 
             // FrmRegistroLibro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(414, 435);
-            Controls.Add(textBox2);
+            Controls.Add(txtPais);
             Controls.Add(label6);
-            Controls.Add(textBox1);
+            Controls.Add(txtEditorial);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(txtYear);
+            Controls.Add(txtAnio);
             Controls.Add(label3);
-            Controls.Add(txtAuthor);
+            Controls.Add(txtAutor);
             Controls.Add(label2);
-            Controls.Add(txtTitle);
+            Controls.Add(txtTitulo);
             Controls.Add(btnRegister);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -183,16 +183,25 @@
 
         private Label label1;
         private Button btnRegister;
-        private TextBox txtTitle;
+        private TextBox txtTitulo;
         private Label label2;
-        private TextBox txtAuthor;
+        private TextBox txtAutor;
         private Label label3;
-        private TextBox txtYear;
-        private int id;
+        private TextBox txtAnio;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtEditorial;
         private Label label6;
-        private TextBox textBox2;
+        private TextBox txtPais;
+
+        // id de Libro
+        private int id = 0;
+
+        // Ruta completa del archivo.
+        private string fullPath;
+
+        // Árbol binario de busqueda accesible a lo largo de toda la aplicación
+        // mientras está en ejecución.
+        private ABB abb;
     }
 }
