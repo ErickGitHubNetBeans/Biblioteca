@@ -2,65 +2,104 @@
 {
     internal class Libro
     {
-        //Atributos:
+        //Atributos.
         private int id;
         private string titulo;
         private string autor;
+        private string editorial;
+        private string pais;
         private int anio;
-        private bool estadoLibro; //disponible o no disponible
+        private bool disponible;
 
-        //Constructor:
-        public Libro(int id, string titulo, string autor, int anio)
+        //Constructor.
+        public Libro(int id, string titulo, string autor, string editorial,
+            string pais, int anio)
         {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
+            this.editorial = editorial;
+            this.pais = pais;
             this.anio = anio;
+
+            // Al ser un libro nuevo, el estado es disponible.
+            this.disponible = true;
         }
-        //Métodos de acceso:
+
+        // INICIO ## Getters y setters
+
         public void setId(int id)
         {
             this.id = id;
         }
+
         public int getId()
         {
             return this.id;
         }
+
         public void setTitulo(string titulo)
         {
             this.titulo = titulo;
         }
+
         public string getTitulo()
         {
             return this.titulo;
         }
+
         public void setAutor(string autor)
         {
-            this.autor= autor;
+            this.autor = autor;
         }
+
         public string getAutor()
         {
             return this.autor;
         }
+
+        public void setEditorial(string editorial)
+        {
+            this.editorial = editorial;
+        }
+
+        public string getEditorial()
+        {
+            return this.editorial;
+        }
+
+        public void setPais(string pais)
+        {
+            this.pais = pais;
+        }
+
+        public string getPais()
+        {
+            return this.pais;
+        }
+
         public void setAnio(int anio)
         {
             this.anio = anio;
         }
+
         public int getAnio()
         {
             return this.anio;
         }
-        public void setEstado(bool estadoLibro)
+
+        public void setDisponible(bool estadoLibro)
         {
-            this.estadoLibro= estadoLibro;
-        }
-        public bool getEstado()
-        {
-            return this.estadoLibro;
+            this.disponible = estadoLibro;
         }
 
-        // Compara los id de dos objetos. Útil para saber si un nodo es igual
-        // a otro que pretende ingresar al ABB.       
+        public bool isDisponible()
+        {
+            return this.disponible;
+        }
+
+        // FIN ## Getters y setters
+    
         public int compare(Libro l)
         {
             if (this.getId() == l.getId())
@@ -69,19 +108,14 @@
             }
             else if (this.getId() < l.getId())
             {
-                // El elemento que pretende ingresar al ABB estaria
-                // ingresando por la derecha.
                 return 1;
             }
             else
             {
-                // El elemento que pretende ingresar al ABB estaria
-                // ingresando por la izquierda.
                 return -1;
             }
         }
-
-        // Valida si existe un identificador de objeto en el árbol.
+        
         public int compareId(int id)
         {
             if (this.getId() == id)
@@ -90,23 +124,12 @@
             }
             else if (this.getId() < id)
             {
-                // El elemento que pretende ingresar al ABB estaria
-                // ingresando por la derecha.
                 return 1;
             }
             else
             {
-                // El elemento que pretende ingresar al ABB estaria
-                // ingresando por la izquierda.
                 return -1;
             }
         }
-
-        //METODOS CRUD
-
-        public void agregarLibro() { }
-        public void mostrarLibro() { }
-        public void actualizarLibro() { }
-        public void eliminarLibro() { }
     }
 }
