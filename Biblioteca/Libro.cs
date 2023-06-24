@@ -12,25 +12,31 @@ namespace Biblioteca
     internal class Libro
     {
         //Atributos:
-        private int idLibro;
+        private int id;
         private string titulo;
         private string autor;
-        private int anio;
         private bool estadoLibro; //disponible o no disponible
 
-        //Constructor:
-        Libro()
+        //Constructor por defecto:
+        public Libro()
         {
 
         }
-        //Métodos de acceso:
-        public void setIdLibro(int id)
+        //Constructor de 3 parámetros:
+        public Libro(int id, string titulo, string autor)
         {
-            this.idLibro = id;
+            this.id = id;
+            this.titulo = titulo;
+            this.autor = autor;
         }
-        public int getIdLibro()
+        //Métodos de acceso:
+        public void setId(int id)
         {
-            return this.idLibro;
+            this.id = id;
+        }
+        public int getId()
+        {
+            return this.id;
         }
         public void setTitulo(string titulo)
         {
@@ -42,27 +48,63 @@ namespace Biblioteca
         }
         public void setAutor(string autor)
         {
-            this.autor= autor;
+            this.autor = autor;
         }
         public string getAutor()
         {
             return this.autor;
         }
-        public void setAnio(int anio)
+
+        public void setEstado(bool estadoLibro)
         {
-            this.anio = anio;
+            this.estadoLibro = estadoLibro;
         }
-        public int getAnio()
-        {
-            return this.anio;
-        }
-        public void setEstadoLibro(bool estadoLibro)
-        {
-            this.estadoLibro= estadoLibro;
-        }
-        public bool getEstadoLibro()
+        public bool getEstado()
         {
             return this.estadoLibro;
+        }
+
+        // Compara los id de dos objetos. Útil para saber si un nodo es igual
+        // a otro que pretende ingresar al ABB.       
+        public int compare(Libro libro)
+        {
+            if (libro.getId() == this.getId())
+            {
+                return 0;
+            }
+            else if (libro.getId() > this.getId())
+            {
+                // El elemento que pretende ingresar al ABB estaria
+                // ingresando por la derecha.
+                return 1;
+            }
+            else
+            {
+                // El elemento que pretende ingresar al ABB estaria
+                // ingresando por la izquierda.
+                return -1;
+            }
+        }
+
+        // Valida si existe un identificador de objeto en el árbol.
+        public int compareId(int id)
+        {
+            if (id == this.getId())
+            {
+                return 0;
+            }
+            else if (id > this.getId())
+            {
+                // El elemento que pretende ingresar al ABB estaria
+                // ingresando por la derecha.
+                return 1;
+            }
+            else
+            {
+                // El elemento que pretende ingresar al ABB estaria
+                // ingresando por la izquierda.
+                return -1;
+            }
         }
 
         //METODOS CRUD

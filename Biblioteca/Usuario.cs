@@ -9,14 +9,22 @@ namespace Biblioteca
     internal class Usuario
     {
         //Atributos:
-        private int idUsuario;
+        private int idUsuario; //es identificacion interna
         private string nombre;
         private string apellido;
-        private string dni;
+        private string dni; //es identificacion externa
 
         //Constructor por defecto:
         public Usuario()
         {
+        }
+
+        //Constructor de 3 parámetros:
+        public Usuario(string nombre, string apellido, string dni)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
         }
 
         //Métodos de acceso
@@ -24,7 +32,8 @@ namespace Biblioteca
         {
             this.idUsuario = id;
         }
-        public int getIdUsuario() {
+        public int getIdUsuario()
+        {
             return this.idUsuario;
         }
         public void setNombre(string nombre)

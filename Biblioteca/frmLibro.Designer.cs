@@ -28,52 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLeer = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtLibros = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            btnLeer = new Button();
+            btnGuardar = new Button();
+            txtLibros = new TextBox();
+            btnRegBook = new Button();
+            SuspendLayout();
             // 
             // btnLeer
             // 
-            this.btnLeer.Location = new System.Drawing.Point(275, 429);
-            this.btnLeer.Name = "btnLeer";
-            this.btnLeer.Size = new System.Drawing.Size(94, 29);
-            this.btnLeer.TabIndex = 1;
-            this.btnLeer.Text = "Leer";
-            this.btnLeer.UseVisualStyleBackColor = true;
-            this.btnLeer.Click += new System.EventHandler(this.btnLeer_Click);
+            btnLeer.Location = new Point(149, 424);
+            btnLeer.Name = "btnLeer";
+            btnLeer.Size = new Size(102, 39);
+            btnLeer.TabIndex = 1;
+            btnLeer.Text = "Leer";
+            btnLeer.UseVisualStyleBackColor = true;
+            btnLeer.Click += btnLeer_Click;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(450, 429);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(94, 29);
-            this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            btnGuardar.Location = new Point(302, 424);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(105, 39);
+            btnGuardar.TabIndex = 2;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtLibros
             // 
-            this.txtLibros.Location = new System.Drawing.Point(204, 54);
-            this.txtLibros.Multiline = true;
-            this.txtLibros.Name = "txtLibros";
-            this.txtLibros.Size = new System.Drawing.Size(386, 348);
-            this.txtLibros.TabIndex = 3;
+            txtLibros.Location = new Point(149, 54);
+            txtLibros.Multiline = true;
+            txtLibros.Name = "txtLibros";
+            txtLibros.Size = new Size(408, 339);
+            txtLibros.TabIndex = 3;
+            // 
+            // btnRegBook
+            // 
+            btnRegBook.Location = new Point(444, 424);
+            btnRegBook.Name = "btnRegBook";
+            btnRegBook.Size = new Size(113, 52);
+            btnRegBook.TabIndex = 8;
+            btnRegBook.Text = "Registrar en un libro";
+            btnRegBook.UseVisualStyleBackColor = true;
+            btnRegBook.Click += btnRegBook_Click;
             // 
             // frmLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 514);
-            this.Controls.Add(this.txtLibros);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnLeer);
-            this.Name = "frmLibro";
-            this.Text = "frmLibro";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(692, 496);
+            Controls.Add(btnRegBook);
+            Controls.Add(txtLibros);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnLeer);
+            Name = "frmLibro";
+            Text = "frmLibro";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -81,5 +92,6 @@
         private Button btnLeer;
         private Button btnGuardar;
         private TextBox txtLibros;
+        private Button btnRegBook;
     }
 }

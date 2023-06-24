@@ -10,37 +10,43 @@ namespace Biblioteca
     internal class Nodo
     {
         //Atributos:
-        private DateTime valor;
-        private Nodo siguiente;
+        private Libro dato;
+        private Nodo derecha;
+        private Nodo izquierda;
 
-        //Constructor por defecto:
-        Nodo()
+        //Constructor:
+        public Nodo(Libro valor)
         {
-
+            this.dato = valor;
+            this.derecha = null;
+            this.izquierda = null;
         }
 
         //Métodos de acceso:
-        public void setValor(DateTime horaFecha)
+        public void setDato(Libro libro)
         {
-            this.valor=horaFecha;
+            this.dato = libro;
         }
-        public DateTime getValor()
+        public Libro getDato()
         {
-            return this.valor;
+            return this.dato;
         }
-        public void setSiguiente(Nodo siguiente)
+        public void setDerecha(Nodo derecha)
         {
-            this.siguiente = siguiente;
+            this.derecha = derecha;
         }
-        public Nodo getSiguiente()
+        public Nodo getDerecha()
         {
-            return this.siguiente;
+            return this.derecha;
+        }
+        public void setIzquierda(Nodo izquierda)
+        {
+            this.izquierda = izquierda;
+        }
+        public Nodo getIzquierda()
+        {
+            return this.izquierda;
         }
 
-        //toString
-        public override string? ToString()
-        {
-            return base.ToString();
-        }
     }
 }

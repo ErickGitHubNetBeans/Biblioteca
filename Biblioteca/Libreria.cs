@@ -10,7 +10,7 @@ namespace Biblioteca
     {
         //Atributos
         private LinkedList<Libro> listaLibros = new LinkedList<Libro>();
-        private LinkedList<Usuario> listaUsuarios=new LinkedList<Usuario>();
+        private LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 
         //Constructor por defecto:
         public Libreria()
@@ -18,7 +18,8 @@ namespace Biblioteca
 
         }
         //Métodos de acceso
-        public void setListaLibros(LinkedList<Libro> listaLibros){
+        public void setListaLibros(LinkedList<Libro> listaLibros)
+        {
             this.listaLibros = listaLibros;
         }
         public LinkedList<Libro> getListaLibros()
@@ -39,8 +40,8 @@ namespace Biblioteca
         {
             return base.ToString();
         }
-        public void agregarUsuario() { 
-            Usuario usuario = new Usuario();
+        public void agregarUsuario(Usuario usuario)
+        {
             listaUsuarios.AddLast(usuario);
         }
         public void mostrarUsuario() { }
