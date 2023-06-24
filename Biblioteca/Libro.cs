@@ -118,10 +118,10 @@ namespace Biblioteca
 
         //METODOS CRUD
 
-        public void agregarLibro() { }
+        /*public void agregarLibro() { }
         public void mostrarLibro() { }
         public void actualizarLibro() { }
-        public void eliminarLibro() { }
+        public void eliminarLibro() { }*/
     }
 }
 

@@ -66,12 +66,23 @@ namespace Biblioteca
         {
             return base.ToString();
         }
-
+        public bool consultarLibro(Libro libro)
+        {
+            return libro.getEstado();
+        }
+        public void prestarLibro(Libro libro)
+        {
+            libro.setEstado(false);
+        }
+        public void devolverLibro(Libro libro)
+        {
+            libro.setEstado(true);
+        }
         //METODOS CRUD
 
-        public void agregarUsuario() { }
+        /*public void agregarUsuario() { }
         public void mostrarUsuario() { }
         public void actualizarUsuario() { }
-        public void eliminarUsuario() { }
+        public void eliminarUsuario() { }*/
     }
 }

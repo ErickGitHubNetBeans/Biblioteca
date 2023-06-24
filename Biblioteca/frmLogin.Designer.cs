@@ -90,6 +90,7 @@
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.Size = new Size(114, 27);
             txtContrasenia.TabIndex = 5;
+            txtContrasenia.UseSystemPasswordChar = true;
             // 
             // btnIngresar
             // 
