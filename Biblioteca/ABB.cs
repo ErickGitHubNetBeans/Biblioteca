@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Biblioteca
 {
-    internal class ABB 
+    public class ABB
     {
         //Atributos
         private Libro l;
@@ -45,10 +41,42 @@ namespace Biblioteca
                 }
                 else
                 {
-                    //Por comentar.
-                    Console.WriteLine("Existe un libro con el mismo id.");
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("Parece que estas intentando ingresar un libro con el mismo id que otro ya cargado en el arbol. ");
+                    sb.Append("Se ignorara este libro y se continuara con la carga de los demás libros.\n");
+                    sb.Append("Revisar el libro titulado: " + lib.getTitulo());
+
+                    MessageBoxButtons btnOk = MessageBoxButtons.OK;
+                    MessageBoxIcon icoErr = MessageBoxIcon.Error;
+
+                    string msg = sb.ToString();
+
+                    string title = "Id de libro repetido";
+                    MessageBox.Show(msg, title, btnOk, icoErr);
                 }
             }
+        }
+
+        /*
+         * Imprime en consola los nodos del árbol desde el nodo más a la 
+         * izquierda del subárbol izquierdo (representando el número 
+         * menor) hasta el nodo más a la derecha del subárbol derecho
+         * (representando el número mayor)
+         */
+        public void inOrdenPrint()
+        {
+            if (this.l is not null)
+            {
+                if (this.izq is not null) { this.izq.inOrdenPrint(); }
+                MessageBox.Show(this.l.getTitulo());
+                if (this.der is not null) { this.der.inOrdenPrint(); }
+            }
+        }
+
+        public int getGreaterId()
+        {
+            if (this.der != null) { return this.der.getGreaterId(); } 
+            else { return this.l.getId(); }
         }
     }
 }
