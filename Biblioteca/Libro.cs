@@ -1,6 +1,6 @@
 ﻿namespace Biblioteca
 {
-    internal class Libro
+    public class Libro
     {
         //Atributos.
         private int id;
@@ -102,9 +102,9 @@
     
         public int compare(Libro l)
         {
-            if (this.getId() == l.getId())
+            if (this.getId() > l.getId())
             {
-                return 0;
+                return -1;
             }
             else if (this.getId() < l.getId())
             {
@@ -112,7 +112,7 @@
             }
             else
             {
-                return -1;
+                return 0;
             }
         }
         
