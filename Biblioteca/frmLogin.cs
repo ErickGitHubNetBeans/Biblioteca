@@ -11,12 +11,12 @@ namespace Biblioteca
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             //usuario Admin, contrasenia 12345
-            if (txtUsuario.Text.Equals("Admin") &&
+            if ((txtUsuario.Text.Equals("Admin")||txtUsuario.Text.Equals("Erick"))&&
                 txtContrasenia.Text.Equals("12345"))
             {
                 frmLibro frmLibro = new frmLibro();
                 frmLibro.Show();
-                //this.Close();
+                this.Hide();
             }
             else
             {

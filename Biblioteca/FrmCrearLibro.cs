@@ -29,11 +29,11 @@ namespace Biblioteca
             }
             else
             {
-                ABB abb = new ABB(); //se instancia
+                ABB abb = new ABB(); //se instancia árbol
 
                 // Atributos de los libros.
                 string title, author;
-                int year;
+                int anio;
 
                 // Identificador de libro autoincrementable.
                 id = id + 1;
@@ -47,22 +47,23 @@ namespace Biblioteca
 
                 title = this.txtTitle.Text;
                 author = this.txtAuthor.Text;
-                year = int.Parse(this.txtYear.Text);
+                anio=int.Parse(this.txtYear.Text);
 
                 // Instancia de la clase libro.
-                Libro l = new Libro(id, title, author);
+                Libro libro = new Libro(id, title, author,anio);
 
                 // Agregar el libro al ABB.
-                abb.insertar(l);
+                abb.insertar(libro);
 
                 // Ruta completa del archivo libro.txt.
                 string path = dir + "\\" + filename;
 
                 // Escribe una cadena por linea
                 using (StreamWriter sw = File.AppendText(path))
+                    //Agrega a la BD sin sobreescribirla
                 { 
                     //exportar datos y agrega datos
-                    sw.WriteLine(createLine(id, title, author));
+                    sw.WriteLine(createLine(id, title, author,anio));
                 }
 
                 // Mensaje de registro exitoso.
@@ -77,16 +78,17 @@ namespace Biblioteca
             }
         }
 
-        private string createLine(int id, string title, string author)
+        private string createLine(int id, string title, string author,int anio)
         {
-            return id + ";" + title + ";" + author + ";" ;
+            return id + ";" + title + ";" + author + ";" +anio;
         }
 
         private bool validateTxtBox()
         {
-            TextBox[] textBoxes = new TextBox[2];
+            TextBox[] textBoxes = new TextBox[3];
             textBoxes[0] = this.txtTitle;
             textBoxes[1] = this.txtAuthor;
+            textBoxes[2] = this.txtYear;
 
             foreach (TextBox tb in textBoxes)
             {
@@ -100,9 +102,10 @@ namespace Biblioteca
 
         private void resetTxtBox()
         {
-            TextBox[] textBoxes = new TextBox[2];
+            TextBox[] textBoxes = new TextBox[3];
             textBoxes[0] = this.txtTitle;
             textBoxes[1] = this.txtAuthor;
+            textBoxes[2] = this.txtYear;
 
             foreach (TextBox tb in textBoxes)
             {

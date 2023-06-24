@@ -15,6 +15,7 @@ namespace Biblioteca
         private int id;
         private string titulo;
         private string autor;
+        private int anio;
         private bool estadoLibro; //disponible o no disponible
 
         //Constructor por defecto:
@@ -23,11 +24,12 @@ namespace Biblioteca
 
         }
         //Constructor de 3 parámetros:
-        public Libro(int id, string titulo, string autor)
+        public Libro(int id, string titulo, string autor,int anio)
         {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
+            this.anio = anio;
         }
         //Métodos de acceso:
         public void setId(int id)
@@ -54,7 +56,14 @@ namespace Biblioteca
         {
             return this.autor;
         }
-
+        public void setAnio(int anio)
+        {
+            this.anio = anio;
+        }
+        public int getAnio()
+        {
+            return this.anio;
+        }
         public void setEstado(bool estadoLibro)
         {
             this.estadoLibro = estadoLibro;

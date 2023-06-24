@@ -93,10 +93,10 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(261, 348);
+            btnIngresar.Location = new Point(268, 326);
             btnIngresar.Margin = new Padding(3, 4, 3, 4);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(86, 31);
+            btnIngresar.Size = new Size(138, 57);
             btnIngresar.TabIndex = 6;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
