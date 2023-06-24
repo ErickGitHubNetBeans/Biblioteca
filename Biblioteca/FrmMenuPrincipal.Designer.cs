@@ -73,5 +73,7 @@
         #endregion
         private Button btnRegBook;
         private Button btnSearch;
+        private string fullPath;
+        private ABB abb;
     }
 }
